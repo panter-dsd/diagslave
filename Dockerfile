@@ -1,10 +1,7 @@
-FROM alpine:latest
+FROM python:3-slim
 
-RUN apk update && apk add python3
-
-RUN cd /tmp && wget https://www.modbusdriver.com/downloads/diagslave.tgz \
-    && cd / && tar -xvf /tmp/diagslave.tgz && mv /diagslave/linux_x86-64/diagslave /usr/bin \
-    && rm /tmp/diagslave.tgz && rm -rf /diagslave
+ADD diagslave.tgz /
+RUN mv /diagslave/linux_x86-64/diagslave /usr/bin && rm -rf /diagslave
 
 ADD cmd.py /
 
