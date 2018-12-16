@@ -50,7 +50,7 @@ def master_activity_timeout():
 
 
 def add_network_arguments(a):
-    a.append('-a')
+    a.append('-p')
     a.append(tcp_port())
     a.append('-c')
     a.append(connection_timeout())
