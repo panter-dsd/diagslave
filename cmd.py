@@ -90,4 +90,4 @@ else:
     exit(1)
 
 print(f'Start process with parameters {arguments}')
-subprocess.call(arguments)
+subprocess.call([str(a) for a in arguments])
